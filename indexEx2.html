@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 - Semana 02</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+
+        .info {
+            background-color: azure;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px; 
+        }
+
+        img {
+            width: 2cm;
+            height: 2cm;
+        }
+
+        button{
+            background-color: blueviolet;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 10px;
+            margin: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h2>Calculo do Frete</h2>
+        <img src="/caminhao-de-entrega.png">
+        <form>
+            <input name="peso" id="peso" placeholder="Peso do Produto" type="number"/>
+            <br>
+            <br>
+            <input name="distancia" id="distancia" placeholder="Distância do Trajeto" type="number"/>
+            <br>
+            <br>
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+
+    <script>
+    function calcular(){
+        var pesoProduto = Number(document.getElementById('peso').value)
+        var distancia = Number(document.getElementById('distancia').value)
+
+        var custoPeso =  pesoProduto * 0.50
+        var custoDistancia = distancia * 0.10
+        var custoFrete = custoPeso + custoDistancia
+
+        alert("O custo total é " + custoFrete + ' reais')
+    }
+    </script>
+</body>
+</html>
